@@ -1,6 +1,18 @@
-import { Box, List, ListItemButton, ListItemText } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
+import {
+  Box,
+  IconButton,
+  List,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import "./components.css";
+
+interface Page {
+  href: string;
+  name: string;
+}
+
 /**
  * Properties that will be used in the Drawer component.
  */
@@ -8,7 +20,7 @@ interface DrawerComponentProps {
   /**
    * The pages that will get rendered on the drawer.
    */
-  names: string[];
+  pages: Page[];
   /**
    * Function to handle what will happen when the drawer button is clicked.
    */
@@ -16,16 +28,31 @@ interface DrawerComponentProps {
 }
 
 const DrawerComponent = ({
-  names,
+  pages,
   handleDrawerToggle,
 }: DrawerComponentProps) => {
   return (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <CloseIcon />
+    <Box sx={{ pl: "12px" }}>
+      <Box
+        sx={{
+          alignItems: "center",
+          display: "inline-flex",
+          width: "100%",
+          height: "64px",
+        }}
+      >
+        <IconButton onClick={handleDrawerToggle}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+
       <List>
-        {names.map((name) => (
-          <ListItemButton >
-            <ListItemText className="menu-listitem-button" primary={name} />
+        {pages.map((page: Page) => (
+          <ListItemButton href={page.href}>
+            <ListItemText
+              className="menu-listitem-button"
+              primary={page.name}
+            />
           </ListItemButton>
         ))}
       </List>
