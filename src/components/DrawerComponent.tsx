@@ -6,6 +6,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 import "./components.css";
 
 interface Page {
@@ -48,7 +49,7 @@ const DrawerComponent = ({
 
       <List>
         {pages.map((page: Page) => (
-          <ListItemButton href={page.href}>
+          <ListItemButton key={page.name} component={Link} to={page.href}>
             <ListItemText
               className="menu-listitem-button"
               primary={page.name}
