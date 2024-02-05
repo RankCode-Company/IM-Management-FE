@@ -1,5 +1,15 @@
+import { useEffect } from "react";
+
 const Home = () => {
-  return <div>Home</div>;
+  useEffect(() => {
+    console.log("component MOunted");
+    return console.log("Component Dismounted");
+  }, []);
+  return (
+    <div>
+      <span>Hello Home component</span>
+    </div>
+  );
 };
 
 export default Home;
