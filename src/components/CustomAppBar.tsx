@@ -16,7 +16,7 @@ import {
 
 import { Menu as MenuIcon, AccountCircle } from "@mui/icons-material";
 import DrawerComponent from "./DrawerComponent";
-
+import viteLogo from "/vite.svg";
 interface CustomAppBarProps {
   pageTitle: string;
 }
@@ -44,6 +44,12 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <div>
+        <a>
+          <img src={viteLogo} className="logo" alt="Test logo"/>
+        </a>
+      </div>
+
       <FormGroup>
         <FormControlLabel
           control={
@@ -118,7 +124,7 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
         >
           <DrawerComponent
             pages={[
-              { name: "Home", href: "home" },
+              { name: "Home", href: "/" },
               { name: "About Us", href: "about" },
             ]}
             handleDrawerToggle={handleDrawerToggle}
