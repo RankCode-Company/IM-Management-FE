@@ -1,27 +1,21 @@
-import { useLocation } from "react-router-dom";
-import { ReactNode, useEffect, useState } from "react";
+import { useLocation, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
 import CustomAppBar from "./CustomAppBar";
 
-//Component Type
-interface LoadingComponentProps {
-  childrenComponent?: ReactNode;
-}
-
-const LoadingComponent = ({ childrenComponent }: LoadingComponentProps) => {
+const LoadingComponent = () => {
   //States
   const [pageTitle, setPageTitle] = useState<string>("");
 
   const location = useLocation();
   const hideAppBarOnPaths = ["/login"]; // Paths where the AppBar should not be shown
   const showAppBar = !hideAppBarOnPaths.includes(location.pathname);
-  console.log(showAppBar);
 
   useEffect(() => {
     //DEBUG
     console.log("DEBUG: Location: ", location);
     //Change the title thats being used in the app bar
     switch (location.pathname) {
-      case "/home":
+      case "/":
         setPageTitle("Home");
         break;
       case "/about":
@@ -37,10 +31,11 @@ const LoadingComponent = ({ childrenComponent }: LoadingComponentProps) => {
         setPageTitle("IM Management");
     }
   }, [location]);
+
   return (
     <>
       {showAppBar && <CustomAppBar pageTitle={pageTitle} />}
-      {childrenComponent}
+      <Outlet />
     </>
   );
 };
