@@ -33,6 +33,58 @@
   display: inline-block;
   font-size: 190px;
 }
+.large-nav-button {
+  display: block;
+  padding: 20px;
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.large-nav-button:hover {
+  background-color: #e8e8e8;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Start with three columns */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.grid-item {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.grid-item:hover {
+  background-color: #e8e8e8;
+}
+
+.large-nav-button {
+  display: block; /* adjust or remove this if you want to use flex or grid for layout */
+}
+@media (max-width: 1024px) { /* Adjust the breakpoint as needed */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+  }
+}
+@media (max-width: 768px) {
+  .large-nav-button {
+    display: none; /* Hide the buttons on small screens as before */
+  }
+}
 
 @keyframes textclip {
   to {
