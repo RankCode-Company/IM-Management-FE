@@ -126,6 +126,7 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
             pages={[
               { name: "Home", href: "/" },
               { name: "About Us", href: "about" },
+              { name: "Orders", href: "orders" },
             ]}
             handleDrawerToggle={handleDrawerToggle}
           />
