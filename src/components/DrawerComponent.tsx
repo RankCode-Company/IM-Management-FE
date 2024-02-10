@@ -32,6 +32,11 @@ const DrawerComponent = ({
   pages,
   handleDrawerToggle,
 }: DrawerComponentProps) => {
+  // This function will be called when a menu item is clicked.
+  const handleMenuItemClick = () => {
+    handleDrawerToggle(); // Call the function to toggle the drawer state.
+  };
+
   return (
     <Box sx={{ pl: "12px" }}>
       <Box
@@ -49,7 +54,12 @@ const DrawerComponent = ({
 
       <List>
         {pages.map((page: Page) => (
-          <ListItemButton key={page.name} component={Link} to={page.href}>
+          <ListItemButton
+            key={page.name}
+            component={Link}
+            to={page.href}
+            onClick={handleMenuItemClick}
+          >
             <ListItemText
               className="menu-listitem-button"
               primary={page.name}

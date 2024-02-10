@@ -7,6 +7,9 @@ import Home from "../pages/home/Home";
 import LoginPage from "../pages/login/Login";
 import LoadingComponent from "../components/LoadingComponent";
 import About from "../pages/about/About";
+import Orders from "../pages/orders/Orders";
+import Spreadsheet from "../pages/spreadsheet/Spreadsheet";
+
 
 const router = createBrowserRouter([
   {
@@ -15,6 +18,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/about", element: <About /> },
+      { path: "/orders", element: <Orders /> },
+      { path: "/spreadsheet", element: <Spreadsheet /> },
       //TODO: Define the other routes, currently: add, view profie?, view reports?, delete, update.
     ],
   },
