@@ -1,0 +1,18 @@
+{
+  "home": {
+    "welcome_message": "Welcome to IM Business Management",
+    "homepage_title": "Home Page"
+  },
+  "about":{
+    "title": "About Us",
+    "content":"About us content"
+  },
+  "orders":{
+    "title":"Orders",
+    "content":"orders Page"
+  },
+  "user": {
+    "logout_button": "Logout",
+    "greeting": "Hello, {{name}}!"
+  }
+}
