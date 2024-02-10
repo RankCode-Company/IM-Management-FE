@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../components/components.css'; // Adjusted for a hypothetical styles folder within src
-
+import { useTranslation } from 'react-i18next';
 
 interface LargeButtonProps {
   path: string;
@@ -17,6 +17,7 @@ const LargeButton: React.FC<LargeButtonProps> = ({ path, label }) => {
 };
 
 const Home: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="container mx-auto p-4 grid-container">
       <LargeButton path="/about" label="About Us" />
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
       <LargeButton path="/spreadsheet" label="Template 1" />
       <LargeButton path="/spreadsheet" label="Template 2" />
       <LargeButton path="/orders" label="Template 3" />
-      <span>Hello Home component</span>
+      <span>{t("home.homepage_title")}</span>
     </div>
   );
 };
