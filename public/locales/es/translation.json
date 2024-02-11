@@ -1,15 +1,17 @@
 {
   "home": {
     "welcome_message": "Bienvenido",
-    "homepage_title": "Página Principal"
+    "title": "Página Principal"
   },
-  "about":{
+  "about": {
     "title": "Sobre Nosotros",
-    "content":"Contenido de pagina sobre nosotros."
+    "content": "Contenido de pagina sobre nosotros."
   },
-  "orders":{
-    "title":"Ordenes",
-    "content":"Pagina de Ordenes"
+  "orders": {
+    "title": "Ordenes",
+    "content": "Pagina de Ordenes",
+    "add": "Añadir Orden",
+    "list": "Ver Ordenes"
   },
   "user": {
     "logout_button": "Cerrar Sesión",
