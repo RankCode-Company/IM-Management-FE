@@ -16,13 +16,16 @@ const LoadingComponent = () => {
     //Change the title thats being used in the app bar
     switch (location.pathname) {
       case "/":
-        setPageTitle("Home");
+        setPageTitle("home.title");
         break;
       case "/about":
-        setPageTitle("About Us");
+        setPageTitle("about.title");
         break;
       case "/login":
         setPageTitle("Log In");
+        break;
+      case "/orders":
+        setPageTitle("orders.title");
         break;
       case "/register":
         setPageTitle("Register");
