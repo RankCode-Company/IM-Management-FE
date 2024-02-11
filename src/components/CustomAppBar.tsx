@@ -17,6 +17,7 @@ import {
 import { Menu as MenuIcon, AccountCircle } from "@mui/icons-material";
 import DrawerComponent from "./DrawerComponent";
 import viteLogo from "/vite.svg";
+import { useTranslation } from "react-i18next";
 interface CustomAppBarProps {
   pageTitle: string;
 }
@@ -25,6 +26,8 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
   const [auth, setAuth] = useState<boolean>(true);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+
+  const { t } = useTranslation();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setAuth(event.target.checked);
@@ -44,9 +47,10 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
+      <Toolbar />
       <div>
         <a>
-          <img src={viteLogo} className="logo" alt="Test logo"/>
+          <img src={viteLogo} className="logo" alt="Test logo" />
         </a>
       </div>
 
@@ -75,7 +79,7 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            {pageTitle}
+            {t(pageTitle)}
           </Typography>
           {auth && (
             <div>
@@ -111,6 +115,7 @@ const CustomAppBar = ({ pageTitle }: CustomAppBarProps) => {
           )}
         </Toolbar>
       </AppBar>
+
       <>
         <Drawer
           variant="temporary"
